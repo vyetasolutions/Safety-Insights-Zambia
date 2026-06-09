@@ -209,7 +209,7 @@
             border-color: rgba(255, 255, 255, 0.25);
         }
 
-        /* * LIVE SIMULATED DATA DASHBOARD 
+        /* * HUMAN-FRIENDLY SIMULATED DATA DASHBOARD 
          */
         .dashboard-container {
             background: rgba(4, 6, 12, 0.7);
@@ -301,30 +301,49 @@
             border: 1px solid var(--border-color);
             border-radius: 14px;
             padding: 20px;
-            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-            font-size: 0.85rem;
+            font-family: inherit;
+            font-size: 0.95rem;
         }
 
         .ticker-title {
+            font-family: var(--font-stack);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
             color: var(--text-secondary);
-            margin-bottom: 12px;
+            margin-bottom: 16px;
             display: flex;
             justify-content: space-between;
         }
 
         .ticker-log-line {
-            color: var(--accent-green);
-            margin-bottom: 6px;
+            color: var(--text-primary);
+            margin-bottom: 10px;
             opacity: 0;
             transform: translateY(4px);
             animation: slideInUp 0.4s forwards;
             display: flex;
-            gap: 12px;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.02);
+            padding-bottom: 8px;
         }
 
-        .ticker-log-line span.time { color: var(--text-secondary); }
-        .ticker-log-line span.loc { color: #ffffff; font-weight: bold;}
-        .ticker-log-line span.status { color: var(--accent-orange); }
+        .ticker-log-line:last-child {
+            border-bottom: none;
+        }
+
+        .ticker-log-line span.time { color: var(--text-secondary); font-size: 0.85rem; }
+        .ticker-log-line span.loc { color: var(--accent-blue); font-weight: 500;}
+        .ticker-log-line span.status { 
+            background: rgba(255, 107, 53, 0.1); 
+            color: var(--accent-orange); 
+            font-size: 0.75rem; 
+            padding: 2px 8px; 
+            border-radius: 6px;
+            font-weight: 600;
+        }
 
         @keyframes slideInUp {
             to { opacity: 1; transform: translateY(0); }
@@ -513,7 +532,7 @@
         <div class="container nav-container">
             <a href="#" class="logo">Safety Insights<span>.ZM</span></a>
             <div class="nav-links">
-                <a href="#live-system">Control Room</a>
+                <a href="#live-system">Live Road Map</a>
                 <a href="#ecosystem">Your Safety</a>
                 <a href="#golden-hour">Survival Protocol</a>
                 <a href="#report">Report Hub</a>
@@ -534,41 +553,41 @@
         </div>
     </header>
 
-    <!-- Interactive Simulated Control Room Dashboard Section -->
+    <!-- Interactive Human-Friendly Control Room Dashboard Section -->
     <section id="live-system" style="padding-top: 0;">
         <div class="container">
             <div class="dashboard-container">
                 <div class="dash-header">
                     <div>
-                        <h3 style="font-weight: 500; font-size: 1.15rem; margin-bottom: 4px;">Incident Telemetry Simulation Engine</h3>
-                        <p style="font-size: 0.85rem;">Projecting risk indexing models based on historic trends and user asset logging.</p>
+                        <h3 style="font-weight: 500; font-size: 1.15rem; margin-bottom: 4px;">Live Road Safety Noticeboard</h3>
+                        <p style="font-size: 0.85rem;">Showing current road conditions and reports from drivers across Zambia.</p>
                     </div>
                     <div class="pulse-indicator">
-                        <div class="pulse-dot"></div> Live Processing
+                        <div class="pulse-dot"></div> Live Updates
                     </div>
                 </div>
 
                 <div class="dash-metrics">
                     <div class="metric-block">
-                        <label>Historic Fatalities Baseline</label>
+                        <label>Lives Lost on Roads (2025 Baseline)</label>
                         <div class="metric-number orange" id="count-fatalities">0</div>
-                        <p style="font-size: 0.8rem; margin-top: 4px;">Annual recorded loss parameters</p>
+                        <p style="font-size: 0.8rem; margin-top: 4px;">Why we are building safer walkways and tracks.</p>
                     </div>
                     <div class="metric-block">
-                        <label>Pedestrian Vulnerability Threshold</label>
+                        <label>Pedestrians Injured or Killed</label>
                         <div class="metric-number" id="count-pedestrians">0</div>
-                        <p style="font-size: 0.8rem; margin-top: 4px;">Concentrated urban center incidents</p>
+                        <p style="font-size: 0.8rem; margin-top: 4px;">People hit while walking near schools & markets.</p>
                     </div>
                     <div class="metric-block">
-                        <label>Simulated Active Risk Corridor</label>
-                        <div class="metric-number blue" id="risk-index">HIGH</div>
+                        <label>Current Area to Drive Carefully</label>
+                        <div class="metric-number blue" id="risk-index">SLOW DOWN</div>
                         <p style="font-size: 0.8rem; margin-top: 4px;" id="risk-corridor">T3 Highway Corridor</p>
                     </div>
                 </div>
 
                 <div class="ticker-box">
                     <div class="ticker-title">
-                        <span>SIMULATED ROUTE DISPATCH & EMERGENCY HAZARD TELEMETRY</span>
+                        <span>Recent Driver Alerts & Community Reports</span>
                         <span id="live-clock">00:00:00 CAT</span>
                     </div>
                     <div id="ticker-rows">
@@ -709,16 +728,22 @@
     <!-- LIVE CONTROL ROOM SIMULATION SCRIPT -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            // 1. Dynamic Rolling Ticker Setup
-            const paths = ["T2 Great North Rd", "T3 Lusaka-Ndola", "M18 Kitwe Corridor", "Kafue Urban Bypass", "Livingstone Highway", "Great East Road"];
-            const hazards = ["Heavy Truck Overloading Threat Detected", "Unmarked Construction Pothole Reported", "Excessive Speed Patterns Flagged", "Vulnerable School Zone Peak Traffic Risk", "Low-Visibility Pedestrian Swarm Risk"];
-            const states = ["ANALYST NOTIFIED", "ROUTING TO ENFORCEMENT", "INFRASTRUCTURE LOGGED", "DATA STACKED"];
+            // 1. Human-Friendly Rolling Alert Ticker Setup
+            const paths = ["Great North Road", "Lusaka-Ndola Highway", "Kitwe Corridor", "Kafue Urban Bypass", "Livingstone Highway", "Great East Road"];
+            const hazards = [
+                "Drivers reporting heavy speeding near local market", 
+                "Large pothole reported in middle of the lane", 
+                "Overloaded truck moving slowly with missing tail-lights", 
+                "Heavy pedestrian crowds reported near school zone", 
+                "Broken down vehicle blocking left side of road"
+            ];
+            const states = ["ALERT LOGGED", "RTSA NOTIFIED", "POLICE ALERTED", "TEAM REVIEWING"];
 
             const tickerContainer = document.getElementById("ticker-rows");
 
             function addTelemetryLine() {
                 const now = new Date();
-                const timeStr = now.toTimeString().split(' ')[0] + " CAT";
+                const timeStr = now.toTimeString().split(' ')[0];
                 const randomPath = paths[Math.floor(Math.random() * paths.length)];
                 const randomHazard = hazards[Math.floor(Math.random() * hazards.length)];
                 const randomState = states[Math.floor(Math.random() * states.length)];
@@ -729,7 +754,7 @@
 
                 tickerContainer.insertBefore(line, tickerContainer.firstChild);
 
-                // Keep only the 4 most recent simulation elements to maintain clean visual space
+                // Keep only the 4 most recent elements to maintain clean visual space
                 if (tickerContainer.children.length > 4) {
                     tickerContainer.removeChild(tickerContainer.lastChild);
                 }
@@ -737,8 +762,8 @@
 
             // Generate initial batch lines
             for(let i=0; i<4; i++) { setTimeout(addTelemetryLine, i * 600); }
-            // Run loop cycle every 4.5 seconds to represent real-time updates
-            setInterval(addTelemetryLine, 4500);
+            // Run loop cycle every 5 seconds to represent real-time community updates
+            setInterval(addTelemetryLine, 5000);
 
             // 2. Animated Counter System for Baseline Statistics
             function animateCounter(id, target, speed) {
@@ -759,8 +784,8 @@
             animateCounter("count-fatalities", 2567, 1200);
             animateCounter("count-pedestrians", 934, 1200);
 
-            // 3. Dynamic Corridor Switching Display
-            const risks = ["CRITICAL", "ELEVATED", "MODAL ACCEL", "PEAK RISK"];
+            // 3. Dynamic Corridor Warnings
+            const risks = ["DRIVE CAREFULLY", "WATCH FOR PEDESTRIANS", "SLOW DOWN", "EXPECT DELAYS"];
             setInterval(() => {
                 document.getElementById("risk-index").textContent = risks[Math.floor(Math.random() * risks.length)];
                 document.getElementById("risk-corridor").textContent = paths[Math.floor(Math.random() * paths.length)];
