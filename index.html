@@ -18,6 +18,7 @@
             --text-secondary: #8e8e93;
             --accent-blue: #2b5cff;
             --accent-orange: #ff6b35;
+            --accent-green: #30d158;
             --accent-purple: #6f2bfe;
             --border-color: rgba(255, 255, 255, 0.06);
             --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -40,12 +41,10 @@
             line-height: 1.6;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
-            /* Radial glow highlighting core interactive elements */
             background-image: radial-gradient(circle at 50% 0%, rgba(111, 43, 254, 0.12) 0%, rgba(43, 92, 255, 0.02) 50%, rgba(2, 3, 6, 1) 100%);
             background-attachment: fixed;
         }
 
-        /* Typography */
         h1, h2, h3, h4 {
             font-weight: 600;
             letter-spacing: -0.03em;
@@ -65,13 +64,13 @@
         }
 
         section {
-            padding: 120px 0;
+            padding: 100px 0;
             position: relative;
         }
 
         .section-header {
             max-width: 700px;
-            margin-bottom: 80px;
+            margin-bottom: 60px;
         }
 
         .section-header h2 {
@@ -150,15 +149,11 @@
         /* * HERO BRAND SECTION 
          */
         .hero {
-            min-height: 90vh;
+            min-height: 80vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             padding-top: 120px;
-        }
-
-        .hero-content {
-            max-width: 850px;
         }
 
         .hero h1 {
@@ -175,7 +170,6 @@
             max-width: 720px;
         }
 
-        /* Buttons */
         .btn-group {
             display: flex;
             gap: 16px;
@@ -215,46 +209,125 @@
             border-color: rgba(255, 255, 255, 0.25);
         }
 
-        /* * HIGH-IMPACT CITIZEN DASHBOARD (STATS) 
+        /* * LIVE SIMULATED DATA DASHBOARD 
          */
-        .dashboard-strip {
-            background: rgba(5, 7, 12, 0.8);
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-            padding: 60px 0;
+        .dashboard-container {
+            background: rgba(4, 6, 12, 0.7);
+            border: 1px solid var(--border-color);
+            border-radius: 28px;
+            padding: 32px;
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 40px 100px rgba(0,0,0,0.8);
         }
 
-        .stats-grid {
+        .dash-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .pulse-indicator {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--accent-green);
+        }
+
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent-green);
+            border-radius: 50%;
+            box-shadow: 0 0 0 0 rgba(48, 209, 88, 0.7);
+            animation: pulse 1.6s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(48, 209, 88, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(48, 209, 88, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(48, 209, 88, 0); }
+        }
+
+        .dash-metrics {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 40px;
+            gap: 24px;
+            margin-bottom: 32px;
         }
 
         @media (min-width: 768px) {
-            .stats-grid { grid-template-columns: repeat(3, 1fr); }
+            .dash-metrics { grid-template-columns: repeat(3, 1fr); }
         }
 
-        .stat-card {
-            text-align: left;
+        .metric-block {
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid rgba(255,255,255,0.03);
+            padding: 24px;
+            border-radius: 16px;
         }
 
-        .stat-card h2 {
-            font-size: clamp(3rem, 6vw, 4.2rem);
-            color: var(--text-primary);
-            font-weight: 700;
-            line-height: 1;
-            margin-bottom: 12px;
-        }
-
-        .stat-card.alert h2 {
-            color: var(--accent-orange);
-        }
-
-        .stat-card p {
-            font-size: 0.95rem;
+        .metric-block label {
+            display: block;
+            font-size: 0.8rem;
             color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+
+        .metric-number {
+            font-size: 2.8rem;
+            font-weight: 700;
+            line-height: 1.1;
+            color: var(--text-primary);
+        }
+
+        .metric-number.orange { color: var(--accent-orange); }
+        .metric-number.blue { color: var(--accent-blue); }
+
+        /* Ticker logs style */
+        .ticker-box {
+            background: #000000;
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 20px;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 0.85rem;
+        }
+
+        .ticker-title {
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .ticker-log-line {
+            color: var(--accent-green);
+            margin-bottom: 6px;
+            opacity: 0;
+            transform: translateY(4px);
+            animation: slideInUp 0.4s forwards;
+            display: flex;
+            gap: 12px;
+        }
+
+        .ticker-log-line span.time { color: var(--text-secondary); }
+        .ticker-log-line span.loc { color: #ffffff; font-weight: bold;}
+        .ticker-log-line span.status { color: var(--accent-orange); }
+
+        @keyframes slideInUp {
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* * CARDS & GRID FRAMEWORKS 
@@ -291,6 +364,14 @@
             font-weight: 500;
         }
 
+        .step-num {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: rgba(255,255,255,0.1);
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+
         /* * SURVIVAL INTERACTIVE PROTOCOLS (THE GOLDEN HOUR) 
          */
         .protocol-box {
@@ -310,24 +391,6 @@
 
         @media (min-width: 992px) {
             .step-list { grid-template-columns: repeat(3, 1fr); }
-        }
-
-        .step-item {
-            position: relative;
-            padding-left: 0;
-        }
-
-        .step-num {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: rgba(255,255,255,0.1);
-            line-height: 1;
-            margin-bottom: 12px;
-            transition: color 0.3s ease;
-        }
-
-        .card:hover .step-num {
-            color: var(--accent-blue);
         }
 
         /* * CITIZEN REPORTING & CONTACT INTERFACE 
@@ -450,6 +513,7 @@
         <div class="container nav-container">
             <a href="#" class="logo">Safety Insights<span>.ZM</span></a>
             <div class="nav-links">
+                <a href="#live-system">Control Room</a>
                 <a href="#ecosystem">Your Safety</a>
                 <a href="#golden-hour">Survival Protocol</a>
                 <a href="#report">Report Hub</a>
@@ -470,27 +534,52 @@
         </div>
     </header>
 
-    <!-- Live Citizen Dashboard Metrics -->
-    <section class="dashboard-strip">
+    <!-- Interactive Simulated Control Room Dashboard Section -->
+    <section id="live-system" style="padding-top: 0;">
         <div class="container">
-            <div class="stats-grid">
-                <div class="stat-card alert">
-                    <h2>2,567</h2>
-                    <p>Zambians lost to traffic accidents in 2025. We are actively deploying structures to drop this number.</p>
+            <div class="dashboard-container">
+                <div class="dash-header">
+                    <div>
+                        <h3 style="font-weight: 500; font-size: 1.15rem; margin-bottom: 4px;">Incident Telemetry Simulation Engine</h3>
+                        <p style="font-size: 0.85rem;">Projecting risk indexing models based on historic trends and user asset logging.</p>
+                    </div>
+                    <div class="pulse-indicator">
+                        <div class="pulse-dot"></div> Live Processing
+                    </div>
                 </div>
-                <div class="stat-card">
-                    <h2>934</h2>
-                    <p>Pedestrian fatalities recorded. Protecting walking paths around schools and markets is our instant priority.</p>
+
+                <div class="dash-metrics">
+                    <div class="metric-block">
+                        <label>Historic Fatalities Baseline</label>
+                        <div class="metric-number orange" id="count-fatalities">0</div>
+                        <p style="font-size: 0.8rem; margin-top: 4px;">Annual recorded loss parameters</p>
+                    </div>
+                    <div class="metric-block">
+                        <label>Pedestrian Vulnerability Threshold</label>
+                        <div class="metric-number" id="count-pedestrians">0</div>
+                        <p style="font-size: 0.8rem; margin-top: 4px;">Concentrated urban center incidents</p>
+                    </div>
+                    <div class="metric-block">
+                        <label>Simulated Active Risk Corridor</label>
+                        <div class="metric-number blue" id="risk-index">HIGH</div>
+                        <p style="font-size: 0.8rem; margin-top: 4px;" id="risk-corridor">T3 Highway Corridor</p>
+                    </div>
                 </div>
-                <div class="stat-card">
-                    <h2>&lt;20m</h2>
-                    <p>Target regional emergency response time threshold via upcoming Life Flight transit corridors.</p>
+
+                <div class="ticker-box">
+                    <div class="ticker-title">
+                        <span>SIMULATED ROUTE DISPATCH & EMERGENCY HAZARD TELEMETRY</span>
+                        <span id="live-clock">00:00:00 CAT</span>
+                    </div>
+                    <div id="ticker-rows">
+                        <!-- Dynamic ticker telemetry will generate here programmatically -->
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- End-User Safety Ecosystem (The Services Block reimagined for people) -->
+    <!-- End-User Safety Ecosystem -->
     <section id="ecosystem">
         <div class="container">
             <div class="section-header">
@@ -500,21 +589,18 @@
             </div>
 
             <div class="grid grid-3">
-                <!-- Point 1 -->
                 <article class="card">
                     <div class="step-num">01</div>
                     <h3>Safe Crossings Network</h3>
                     <p>Building high-visibility raised crosswalks and speed bumps directly across high-density pedestrian junctions like school zones and open-air markets to aggressively slow oncoming highway traffic.</p>
                 </article>
 
-                <!-- Point 2 -->
                 <article class="card">
                     <div class="step-num">02</div>
                     <h3>Anti-Corruption Body Cams</h3>
                     <p>Partnering with RTSA and the Zambia Police to equip road check units with continuous-loop body cameras. This stops arbitrary traffic delays, eliminates bribery loops, and ensures transparent data logs.</p>
                 </article>
 
-                <!-- Point 3 -->
                 <article class="card">
                     <div class="step-num">03</div>
                     <h3>Highway Isolation Fencing</h3>
@@ -578,7 +664,6 @@
                     </p>
                 </div>
 
-                <!-- Live Submissions Action Form -->
                 <div class="form-container">
                     <form class="contact-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Road hazard successfully logged to the Safety Insights Zambia database. Thank you for making our roads safer.'); this.reset();">
                         <div class="form-group">
@@ -621,5 +706,72 @@
         </div>
     </footer>
 
+    <!-- LIVE CONTROL ROOM SIMULATION SCRIPT -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // 1. Dynamic Rolling Ticker Setup
+            const paths = ["T2 Great North Rd", "T3 Lusaka-Ndola", "M18 Kitwe Corridor", "Kafue Urban Bypass", "Livingstone Highway", "Great East Road"];
+            const hazards = ["Heavy Truck Overloading Threat Detected", "Unmarked Construction Pothole Reported", "Excessive Speed Patterns Flagged", "Vulnerable School Zone Peak Traffic Risk", "Low-Visibility Pedestrian Swarm Risk"];
+            const states = ["ANALYST NOTIFIED", "ROUTING TO ENFORCEMENT", "INFRASTRUCTURE LOGGED", "DATA STACKED"];
+
+            const tickerContainer = document.getElementById("ticker-rows");
+
+            function addTelemetryLine() {
+                const now = new Date();
+                const timeStr = now.toTimeString().split(' ')[0] + " CAT";
+                const randomPath = paths[Math.floor(Math.random() * paths.length)];
+                const randomHazard = hazards[Math.floor(Math.random() * hazards.length)];
+                const randomState = states[Math.floor(Math.random() * states.length)];
+
+                const line = document.createElement("div");
+                line.className = "ticker-log-line";
+                line.innerHTML = `<span class="time">[${timeStr}]</span> <span class="loc">${randomPath}:</span> ${randomHazard} &rarr; <span class="status">${randomState}</span>`;
+
+                tickerContainer.insertBefore(line, tickerContainer.firstChild);
+
+                // Keep only the 4 most recent simulation elements to maintain clean visual space
+                if (tickerContainer.children.length > 4) {
+                    tickerContainer.removeChild(tickerContainer.lastChild);
+                }
+            }
+
+            // Generate initial batch lines
+            for(let i=0; i<4; i++) { setTimeout(addTelemetryLine, i * 600); }
+            // Run loop cycle every 4.5 seconds to represent real-time updates
+            setInterval(addTelemetryLine, 4500);
+
+            // 2. Animated Counter System for Baseline Statistics
+            function animateCounter(id, target, speed) {
+                let current = 0;
+                const element = document.getElementById(id);
+                const step = Math.ceil(target / (speed / 16));
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= target) {
+                        element.textContent = target.toLocaleString();
+                        clearInterval(timer);
+                    } else {
+                        element.textContent = current.toLocaleString();
+                    }
+                }, 16);
+            }
+
+            animateCounter("count-fatalities", 2567, 1200);
+            animateCounter("count-pedestrians", 934, 1200);
+
+            // 3. Dynamic Corridor Switching Display
+            const risks = ["CRITICAL", "ELEVATED", "MODAL ACCEL", "PEAK RISK"];
+            setInterval(() => {
+                document.getElementById("risk-index").textContent = risks[Math.floor(Math.random() * risks.length)];
+                document.getElementById("risk-corridor").textContent = paths[Math.floor(Math.random() * paths.length)];
+            }, 6000);
+
+            // 4. System Live Clock Implementation
+            setInterval(() => {
+                const now = new Date();
+                document.getElementById("live-clock").textContent = now.toTimeString().split(' ')[0] + " CAT";
+            }, 1000);
+        });
+    </script>
 </body>
 </html>
