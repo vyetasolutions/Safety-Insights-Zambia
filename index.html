@@ -6,10 +6,8 @@
     <title>Safety Insights Zambia | Smarter Roads, Safer Journeys</title>
     <meta name="description" content="Empowering Zambian road users with data-driven safety infrastructure, transparent enforcement, and rapid crisis response.">
     
-    <!-- Inline CSS: Samsung Flagship Campaign Inspired (Minimal, Dark Gradient, Clean Typography) -->
+    <!-- Minimal Inline CSS -->
     <style>
-        /* * GLOBAL DESIGN SYSTEM 
-         */
         :root {
             --bg-color: #020306;
             --surface-color: rgba(255, 255, 255, 0.02);
@@ -19,7 +17,6 @@
             --accent-blue: #2b5cff;
             --accent-orange: #ff6b35;
             --accent-green: #30d158;
-            --accent-purple: #6f2bfe;
             --border-color: rgba(255, 255, 255, 0.06);
             --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
@@ -41,8 +38,6 @@
             line-height: 1.6;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
-            background-image: radial-gradient(circle at 50% 0%, rgba(111, 43, 254, 0.12) 0%, rgba(43, 92, 255, 0.02) 50%, rgba(2, 3, 6, 1) 100%);
-            background-attachment: fixed;
         }
 
         h1, h2, h3, h4 {
@@ -64,21 +59,19 @@
         }
 
         section {
-            padding: 100px 0;
+            padding: 80px 0;
             position: relative;
         }
 
         .section-header {
             max-width: 700px;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
         }
 
         .section-header h2 {
             font-size: clamp(2.2rem, 5vw, 3.2rem);
-            margin-bottom: 20px;
-            background: linear-gradient(180deg, #fff 0%, #a1a1a6 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            margin-bottom: 16px;
+            color: #fff;
         }
 
         .badge {
@@ -91,7 +84,7 @@
             letter-spacing: 0.05em;
             background: rgba(255, 255, 255, 0.05);
             color: var(--text-secondary);
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             border: 1px solid var(--border-color);
         }
 
@@ -101,10 +94,9 @@
             border-color: rgba(255, 107, 53, 0.2);
         }
 
-        /* * NAVIGATION 
-         */
+        /* NAVIGATION */
         nav {
-            padding: 32px 0;
+            padding: 24px 0;
             position: absolute;
             top: 0;
             width: 100%;
@@ -122,7 +114,6 @@
             font-weight: 700;
             text-decoration: none;
             color: var(--text-primary);
-            letter-spacing: -0.02em;
         }
 
         .logo span {
@@ -131,7 +122,7 @@
 
         .nav-links {
             display: flex;
-            gap: 32px;
+            gap: 24px;
             align-items: center;
         }
 
@@ -139,34 +130,30 @@
             color: var(--text-secondary);
             text-decoration: none;
             font-size: 0.95rem;
-            transition: color 0.3s ease;
         }
 
         .nav-links a:hover {
             color: var(--text-primary);
         }
 
-        /* * HERO BRAND SECTION 
-         */
+        /* HERO */
         .hero {
-            min-height: 80vh;
+            min-height: 70vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding-top: 120px;
+            padding-top: 100px;
         }
 
         .hero h1 {
             font-size: clamp(2.8rem, 7vw, 4.8rem);
             margin-bottom: 24px;
-            background: linear-gradient(to right, #ffffff 40%, #8e8e93 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #fff;
         }
 
         .hero p {
             font-size: clamp(1.1rem, 2.5vw, 1.35rem);
-            margin-bottom: 40px;
+            margin-bottom: 32px;
             max-width: 720px;
         }
 
@@ -178,24 +165,23 @@
 
         .btn {
             display: inline-block;
-            padding: 16px 36px;
+            padding: 14px 32px;
             border-radius: 30px;
             text-decoration: none;
             font-weight: 500;
             font-size: 1rem;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             cursor: pointer;
             border: none;
+            transition: opacity 0.2s ease;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
         }
 
         .btn-primary {
             background: #ffffff;
             color: #000000;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 30px rgba(255, 255, 255, 0.15);
         }
 
         .btn-secondary {
@@ -204,65 +190,24 @@
             border: 1px solid var(--border-color);
         }
 
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.05);
-            border-color: rgba(255, 255, 255, 0.25);
-        }
-
-        /* * HUMAN-FRIENDLY SIMULATED DATA DASHBOARD 
-         */
+        /* STATIC INFO BOARD (SIMULATIONS REMOVED) */
         .dashboard-container {
             background: rgba(4, 6, 12, 0.7);
             border: 1px solid var(--border-color);
-            border-radius: 28px;
+            border-radius: 24px;
             padding: 32px;
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            box-shadow: 0 40px 100px rgba(0,0,0,0.8);
         }
 
         .dash-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
             border-bottom: 1px solid var(--border-color);
-            padding-bottom: 20px;
-            margin-bottom: 32px;
-            flex-wrap: wrap;
-            gap: 16px;
-        }
-
-        .pulse-indicator {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--accent-green);
-        }
-
-        .pulse-dot {
-            width: 8px;
-            height: 8px;
-            background-color: var(--accent-green);
-            border-radius: 50%;
-            box-shadow: 0 0 0 0 rgba(48, 209, 88, 0.7);
-            animation: pulse 1.6s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(48, 209, 88, 0.7); }
-            70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(48, 209, 88, 0); }
-            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(48, 209, 88, 0); }
+            padding-bottom: 16px;
+            margin-bottom: 24px;
         }
 
         .dash-metrics {
             display: grid;
             grid-template-columns: 1fr;
             gap: 24px;
-            margin-bottom: 32px;
         }
 
         @media (min-width: 768px) {
@@ -286,71 +231,15 @@
         }
 
         .metric-number {
-            font-size: 2.8rem;
+            font-size: 2.2rem;
             font-weight: 700;
-            line-height: 1.1;
             color: var(--text-primary);
         }
 
         .metric-number.orange { color: var(--accent-orange); }
         .metric-number.blue { color: var(--accent-blue); }
 
-        /* Ticker logs style */
-        .ticker-box {
-            background: #000000;
-            border: 1px solid var(--border-color);
-            border-radius: 14px;
-            padding: 20px;
-            font-family: inherit;
-            font-size: 0.95rem;
-        }
-
-        .ticker-title {
-            font-family: var(--font-stack);
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--text-secondary);
-            margin-bottom: 16px;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .ticker-log-line {
-            color: var(--text-primary);
-            margin-bottom: 10px;
-            opacity: 0;
-            transform: translateY(4px);
-            animation: slideInUp 0.4s forwards;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            align-items: center;
-            border-bottom: 1px solid rgba(255,255,255,0.02);
-            padding-bottom: 8px;
-        }
-
-        .ticker-log-line:last-child {
-            border-bottom: none;
-        }
-
-        .ticker-log-line span.time { color: var(--text-secondary); font-size: 0.85rem; }
-        .ticker-log-line span.loc { color: var(--accent-blue); font-weight: 500;}
-        .ticker-log-line span.status { 
-            background: rgba(255, 107, 53, 0.1); 
-            color: var(--accent-orange); 
-            font-size: 0.75rem; 
-            padding: 2px 8px; 
-            border-radius: 6px;
-            font-weight: 600;
-        }
-
-        @keyframes slideInUp {
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* * CARDS & GRID FRAMEWORKS 
-         */
+        /* CARDS & GRID */
         .grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -358,66 +247,51 @@
         }
 
         @media (min-width: 768px) {
-            .grid-2 { grid-template-columns: repeat(2, 1fr); }
             .grid-3 { grid-template-columns: repeat(3, 1fr); }
         }
 
         .card {
             background: var(--surface-color);
             border: 1px solid var(--border-color);
-            border-radius: 24px;
-            padding: 48px 40px;
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .card:hover {
-            background: var(--surface-hover);
-            transform: translateY(-6px);
-            border-color: rgba(255, 255, 255, 0.12);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+            border-radius: 20px;
+            padding: 36px 30px;
         }
 
         .card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 16px;
-            font-weight: 500;
-        }
-
-        .step-num {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: rgba(255,255,255,0.1);
-            line-height: 1;
+            font-size: 1.3rem;
             margin-bottom: 12px;
         }
 
-        /* * SURVIVAL INTERACTIVE PROTOCOLS (THE GOLDEN HOUR) 
-         */
+        .step-num {
+            font-size: 2rem;
+            font-weight: 700;
+            color: rgba(255,255,255,0.1);
+            margin-bottom: 8px;
+        }
+
+        /* PROTOCOL BOX */
         .protocol-box {
-            background: radial-gradient(ellipse at top left, rgba(43, 92, 255, 0.05) 0%, transparent 70%);
             border: 1px solid var(--border-color);
-            border-radius: 32px;
-            padding: 60px 40px;
-            margin-top: 40px;
+            border-radius: 24px;
+            padding: 40px;
         }
 
         .step-list {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 32px;
-            margin-top: 40px;
+            gap: 24px;
+            margin-top: 32px;
         }
 
         @media (min-width: 992px) {
             .step-list { grid-template-columns: repeat(3, 1fr); }
         }
 
-        /* * CITIZEN REPORTING & CONTACT INTERFACE 
-         */
+        /* REPORTING INTERFACE */
         .interface-layout {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 64px;
+            gap: 48px;
         }
 
         @media (min-width: 992px) {
@@ -425,30 +299,30 @@
         }
 
         .hotline-card {
-            background: linear-gradient(135deg, rgba(255, 107, 53, 0.05) 0%, rgba(111, 43, 254, 0.05) 100%);
+            background: rgba(255, 107, 53, 0.05);
             border: 1px solid rgba(255, 107, 53, 0.15);
-            border-radius: 24px;
-            padding: 40px;
-            margin-bottom: 32px;
+            border-radius: 20px;
+            padding: 32px;
+            margin-top: 24px;
+            margin-bottom: 24px;
         }
 
         .hotline-number {
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             font-weight: 700;
             color: var(--accent-orange);
-            margin: 12px 0;
-            letter-spacing: 0.05em;
+            margin: 8px 0;
         }
 
         .form-container {
             background: var(--surface-color);
             border: 1px solid var(--border-color);
-            border-radius: 28px;
-            padding: 48px;
+            border-radius: 24px;
+            padding: 36px;
         }
 
         .form-group {
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
 
         .form-group label {
@@ -457,7 +331,6 @@
             color: var(--text-secondary);
             margin-bottom: 8px;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
         }
 
         .form-group input,
@@ -466,21 +339,11 @@
             width: 100%;
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid var(--border-color);
-            border-radius: 14px;
-            padding: 16px;
+            border-radius: 12px;
+            padding: 14px;
             color: var(--text-primary);
             font-family: inherit;
             font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .form-group select {
-            appearance: none;
-            cursor: pointer;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%238e8e93' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 16px center;
-            background-size: 16px;
         }
 
         .form-group input:focus,
@@ -488,14 +351,12 @@
         .form-group textarea:focus {
             outline: none;
             border-color: rgba(255,255,255,0.3);
-            background: rgba(255, 255, 255, 0.05);
         }
 
-        /* * FOOTER 
-         */
+        /* FOOTER */
         footer {
             border-top: 1px solid var(--border-color);
-            padding: 60px 0;
+            padding: 40px 0;
             font-size: 0.9rem;
         }
 
@@ -503,7 +364,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 24px;
+            gap: 16px;
         }
 
         @media (min-width: 768px) {
@@ -516,12 +377,7 @@
         .meta-links a {
             color: var(--text-secondary);
             text-decoration: none;
-            margin-left: 24px;
-            transition: color 0.3s ease;
-        }
-
-        .meta-links a:hover {
-            color: var(--text-primary);
+            margin-left: 20px;
         }
     </style>
 </head>
@@ -532,271 +388,181 @@
         <div class="container nav-container">
             <a href="#" class="logo">Safety Insights<span>.ZM</span></a>
             <div class="nav-links">
-                <a href="#live-system">Live Road Map</a>
-                <a href="#ecosystem">Your Safety</a>
-                <a href="#golden-hour">Survival Protocol</a>
+                <a href="#overview">Overview</a>
+                <a href="#ecosystem">Protections</a>
+                <a href="#golden-hour">Protocol</a>
                 <a href="#report">Report Hub</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero / Intro Component -->
+    <!-- Hero Section -->
     <header class="hero">
-        <div class="container hero-content">
+        <div class="container">
             <span class="badge badge-orange">Zambia Road User Network</span>
             <h1>Smarter Roads.<br>Safer Citizens.</h1>
-            <p>Every journey matters. We bridge advanced national safety planning with everyday street level protection—giving drivers, passengers, and pedestrians the real-time insights and responsive infrastructure needed to arrive alive.</p>
+            <p>Bridging national safety planning with everyday street-level protection to give drivers, passengers, and pedestrians reliable infrastructure insights.</p>
             <div class="btn-group">
-                <a href="#ecosystem" class="btn btn-primary">Explore Road Protections</a>
-                <a href="#report" class="btn btn-secondary">Report Road Hazard</a>
+                <a href="#ecosystem" class="btn btn-primary">Explore Protections</a>
+                <a href="#report" class="btn btn-secondary">Report Hazard</a>
             </div>
         </div>
     </header>
 
-    <!-- Interactive Human-Friendly Control Room Dashboard Section -->
-    <section id="live-system" style="padding-top: 0;">
+    <!-- Static Noticeboard (Bloat & Simulations Removed) -->
+    <section id="overview" style="padding-top: 0;">
         <div class="container">
             <div class="dashboard-container">
                 <div class="dash-header">
-                    <div>
-                        <h3 style="font-weight: 500; font-size: 1.15rem; margin-bottom: 4px;">Live Road Safety Noticeboard</h3>
-                        <p style="font-size: 0.85rem;">Showing current road conditions and reports from drivers across Zambia.</p>
-                    </div>
-                    <div class="pulse-indicator">
-                        <div class="pulse-dot"></div> Live Updates
-                    </div>
+                    <h3 style="font-size: 1.15rem; margin-bottom: 4px;">Road Safety Focus Areas</h3>
+                    <p style="font-size: 0.85rem;">Core statistics guiding our infrastructure deployment across Zambia[cite: 1].</p>
                 </div>
 
                 <div class="dash-metrics">
                     <div class="metric-block">
-                        <label>Lives Lost on Roads (2025 Baseline)</label>
-                        <div class="metric-number orange" id="count-fatalities">0</div>
-                        <p style="font-size: 0.8rem; margin-top: 4px;">Why we are building safer walkways and tracks.</p>
+                        <label>Primary Focus</label>
+                        <div class="metric-number orange">Highway Safety</div>
+                        <p style="font-size: 0.8rem; margin-top: 4px;">Building safer walkways and tracks.</p>
                     </div>
                     <div class="metric-block">
-                        <label>Pedestrians Injured or Killed</label>
-                        <div class="metric-number" id="count-pedestrians">0</div>
-                        <p style="font-size: 0.8rem; margin-top: 4px;">People hit while walking near schools & markets.</p>
+                        <label>Vulnerable Zones</label>
+                        <div class="metric-number">Schools & Markets</div>
+                        <p style="font-size: 0.8rem; margin-top: 4px;">Protecting pedestrians in high-density areas.</p>
                     </div>
                     <div class="metric-block">
-                        <label>Current Area to Drive Carefully</label>
-                        <div class="metric-number blue" id="risk-index">SLOW DOWN</div>
-                        <p style="font-size: 0.8rem; margin-top: 4px;" id="risk-corridor">T3 Highway Corridor</p>
-                    </div>
-                </div>
-
-                <div class="ticker-box">
-                    <div class="ticker-title">
-                        <span>Recent Driver Alerts & Community Reports</span>
-                        <span id="live-clock">00:00:00 CAT</span>
-                    </div>
-                    <div id="ticker-rows">
-                        <!-- Dynamic ticker telemetry will generate here programmatically -->
+                        <label>Advisory Status</label>
+                        <div class="metric-number blue">SLOW DOWN</div>
+                        <p style="font-size: 0.8rem; margin-top: 4px;">T3 Highway Corridor & Major Routes</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- End-User Safety Ecosystem -->
+    <!-- Safety Ecosystem -->
     <section id="ecosystem">
         <div class="container">
             <div class="section-header">
                 <span class="badge">Everyday Protections</span>
                 <h2>How We Protect You</h2>
-                <p>Deploying practical, localized safety infrastructure designed around the specific daily patterns of Zambian communities.</p>
+                <p>Practical, localized safety infrastructure designed around community patterns[cite: 1].</p>
             </div>
 
             <div class="grid grid-3">
                 <article class="card">
                     <div class="step-num">01</div>
                     <h3>Safe Crossings Network</h3>
-                    <p>Building high-visibility raised crosswalks and speed bumps directly across high-density pedestrian junctions like school zones and open-air markets to aggressively slow oncoming highway traffic.</p>
+                    <p>Building high-visibility raised crosswalks and speed bumps across pedestrian junctions near school zones and open-air markets[cite: 1].</p>
                 </article>
 
                 <article class="card">
                     <div class="step-num">02</div>
                     <h3>Anti-Corruption Body Cams</h3>
-                    <p>Partnering with RTSA and the Zambia Police to equip road check units with continuous-loop body cameras. This stops arbitrary traffic delays, eliminates bribery loops, and ensures transparent data logs.</p>
+                    <p>Partnering with authorities to equip check units with continuous body cameras to eliminate delays and ensure transparent logs[cite: 1].</p>
                 </article>
 
                 <article class="card">
                     <div class="step-num">03</div>
                     <h3>Highway Isolation Fencing</h3>
-                    <p>Installing structural divider fences along major routes like Cairo Road or the Great East Road market stretches, preventing unexpected pedestrian darting and establishing clear, safe crossing corridors.</p>
+                    <p>Installing structural divider fences along major routes to prevent unexpected pedestrian crossings and establish safe corridors[cite: 1].</p>
                 </article>
             </div>
         </div>
     </section>
 
-    <!-- Survival Protocols Feature Section (The Golden Hour) -->
-    <section id="golden-hour" style="background: rgba(255,255,255,0.01);">
+    <!-- Survival Protocols Section -->
+    <section id="golden-hour">
         <div class="container">
             <div class="protocol-box">
                 <div style="max-width: 650px;">
                     <span class="badge" style="background: rgba(43, 92, 255, 0.1); color: var(--accent-blue); border-color: rgba(43, 92, 255, 0.2);">The Golden Hour Threshold</span>
                     <h2>Critical Post-Crash Survival Protocol</h2>
-                    <p style="margin-top: 12px;">Over 50% of serious trauma fatalities occur due to a lack of immediate care within the first hour of an accident. Knowing exactly how to respond preserves lives while dispatch units are in transit.</p>
+                    <p style="margin-top: 12px;">Immediate care within the first hour preserves lives while emergency units are in transit[cite: 1].</p>
                 </div>
 
                 <div class="step-list">
                     <div class="card">
-                        <div class="step-num" style="color: var(--accent-orange);">STEP 1</div>
-                        <h3 style="margin-bottom: 8px;">Secure the Perimeter</h3>
-                        <p style="font-size: 0.95rem;">Park your vehicle safely well before the scene. Turn on your hazard lights immediately to warn speeding long-distance trucks and oncoming traffic.</p>
+                        <div class="step-num" style="color: var(--accent-orange);">01</div>
+                        <h3 style="margin-bottom: 8px;">Secure Perimeter</h3>
+                        <p style="font-size: 0.95rem;">Park safely and turn on hazard lights immediately to warn oncoming traffic[cite: 1].</p>
                     </div>
                     <div class="card">
-                        <div class="step-num" style="color: var(--accent-orange);">STEP 2</div>
-                        <h3 style="margin-bottom: 8px;">Trigger Rapid Dispatch</h3>
-                        <p style="font-size: 0.95rem;">Call emergency medical links immediately. Clearly relay your highway corridor location, approximate kilometer markers, and total count of injured persons.</p>
+                        <div class="step-num" style="color: var(--accent-orange);">02</div>
+                        <h3 style="margin-bottom: 8px;">Trigger Dispatch</h3>
+                        <p style="font-size: 0.95rem;">Call emergency medical links. Relay your highway corridor and total injured count[cite: 1].</p>
                     </div>
                     <div class="card">
-                        <div class="step-num" style="color: var(--accent-orange);">STEP 3</div>
-                        <h3 style="margin-bottom: 8px;">Control Heavy Bleeding</h3>
-                        <p style="font-size: 0.95rem;">Do not move victims unless there is an immediate fire hazard. Apply constant, direct physical pressure to open wounds using clean cloths until medical teams arrive.</p>
+                        <div class="step-num" style="color: var(--accent-orange);">03</div>
+                        <h3 style="margin-bottom: 8px;">Control Bleeding</h3>
+                        <p style="font-size: 0.95rem;">Apply direct physical pressure to open wounds using clean cloths until help arrives[cite: 1].</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Citizen Hazard Submissions & Hotline Interface -->
+    <!-- Hazard Submissions & Hotline Interface -->
     <section id="report">
         <div class="container">
             <div class="interface-layout">
-                <div class="contact-info">
+                <div>
                     <span class="badge">Community Response Hub</span>
-                    <h2>Report a Hazard, Prevent a Tragedy</h2>
-                    <p style="margin-bottom: 32px;">See a dangerously overloaded truck? Encountered an unmarked deep road defect or an unlit construction zone on the Lusaka-Ndola highway? Submit it directly to our technical desk so we can loop in enforcement networks.</p>
+                    <h2>Report a Hazard</h2>
+                    <p style="margin-bottom: 24px;">Submit road defects, unlit construction zones, or safety concerns directly to our technical desk[cite: 1].</p>
                     
                     <div class="hotline-card">
                         <h4>General Safety Support Desk</h4>
                         <div class="hotline-number">+260 211372711</div>
-                        <p style="font-size: 0.9rem;">Monitoring highway infrastructure integrity and citizen safety escalations across primary corridors.</p>
+                        <p style="font-size: 0.9rem;">Monitoring highway infrastructure integrity across primary corridors[cite: 1].</p>
                     </div>
 
-                    <p style="font-size: 0.9rem; max-width: 100%;">
+                    <p style="font-size: 0.9rem;">
                         <strong>Office Location:</strong><br>
                         Safety Insights Zambia Limited<br>
-                        Plot 95/60 Los Angeles Road, Makeni, Lusaka, Zambia<br>
-                        Mobile Team Support: +260 978209420 / +260 960216771
+                        Plot 95/60 Los Angeles Road, Makeni, Lusaka, Zambia[cite: 1]
                     </p>
                 </div>
 
                 <div class="form-container">
-                    <form class="contact-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Road hazard successfully logged to the Safety Insights Zambia database. Thank you for making our roads safer.'); this.reset();">
+                    <form onsubmit="event.preventDefault(); alert('Road hazard successfully logged.'); this.reset();">
                         <div class="form-group">
-                            <label>Your Name / Identity Indicator</label>
-                            <input type="text" placeholder="e.g., Driver Chileshe (Optional info)" name="citizen_name">
+                            <label>Your Name / Identity</label>
+                            <input type="text" placeholder="Optional info" name="citizen_name">
                         </div>
                         <div class="form-group">
-                            <label>Primary Contact Method</label>
-                            <input type="text" placeholder="Phone number or email address" required name="citizen_contact">
+                            <label>Contact Method</label>
+                            <input type="text" placeholder="Phone number or email" required name="citizen_contact">
                         </div>
                         <div class="form-group">
-                            <label>Identified Highway Location / Zone</label>
+                            <label>Highway Location / Zone</label>
                             <select required name="hazard_location">
-                                <option value="" disabled selected>Select regional focus area...</option>
+                                <option value="" disabled selected>Select regional focus...</option>
                                 <option value="lusaka-ndola">Lusaka - Ndola Corridor</option>
                                 <option value="lusaka-urban">Lusaka Urban Center</option>
-                                <option value="copperbelt">Copperbelt Local Network (Kitwe / Ndola)</option>
-                                <option value="other">Other Transit Line / Route</option>
+                                <option value="copperbelt">Copperbelt Local Network</option>
+                                <option value="other">Other Transit Line</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label>Description of Safety Hazard</label>
-                            <textarea placeholder="Please describe what you encountered (e.g., severe overloading, hidden school crossing risk, spotty visibility, lack of speed control barriers)..." required name="hazard_details"></textarea>
+                            <label>Description of Hazard</label>
+                            <textarea placeholder="Describe what you encountered..." required name="hazard_details"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%; font-weight: 600;">Log Hazard to Database</button>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; font-weight: 600;">Log Hazard</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer Component -->
+    <!-- Footer -->
     <footer>
         <div class="container footer-wrap">
-            <p>&copy; 2026 Safety Insights Zambia Limited. Driven to eliminate preventable highway loss.</p>
+            <p>&copy; 2026 Safety Insights Zambia Limited[cite: 1].</p>
             <div class="meta-links">
-                <a href="mailto:yahatigreen@gmail.com">yahatigreen@gmail.com</a>
-                <a href="#ecosystem">System Overview</a>
+                <a href="mailto:yahatigreen@gmail.com">yahatigreen@gmail.com[cite: 1]</a>
             </div>
         </div>
     </footer>
 
-    <!-- LIVE CONTROL ROOM SIMULATION SCRIPT -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            // 1. Human-Friendly Rolling Alert Ticker Setup
-            const paths = ["Great North Road", "Lusaka-Ndola Highway", "Kitwe Corridor", "Kafue Urban Bypass", "Livingstone Highway", "Great East Road"];
-            const hazards = [
-                "Drivers reporting heavy speeding near local market", 
-                "Large pothole reported in middle of the lane", 
-                "Overloaded truck moving slowly with missing tail-lights", 
-                "Heavy pedestrian crowds reported near school zone", 
-                "Broken down vehicle blocking left side of road"
-            ];
-            const states = ["ALERT LOGGED", "RTSA NOTIFIED", "POLICE ALERTED", "TEAM REVIEWING"];
-
-            const tickerContainer = document.getElementById("ticker-rows");
-
-            function addTelemetryLine() {
-                const now = new Date();
-                const timeStr = now.toTimeString().split(' ')[0];
-                const randomPath = paths[Math.floor(Math.random() * paths.length)];
-                const randomHazard = hazards[Math.floor(Math.random() * hazards.length)];
-                const randomState = states[Math.floor(Math.random() * states.length)];
-
-                const line = document.createElement("div");
-                line.className = "ticker-log-line";
-                line.innerHTML = `<span class="time">[${timeStr}]</span> <span class="loc">${randomPath}:</span> ${randomHazard} &rarr; <span class="status">${randomState}</span>`;
-
-                tickerContainer.insertBefore(line, tickerContainer.firstChild);
-
-                // Keep only the 4 most recent elements to maintain clean visual space
-                if (tickerContainer.children.length > 4) {
-                    tickerContainer.removeChild(tickerContainer.lastChild);
-                }
-            }
-
-            // Generate initial batch lines
-            for(let i=0; i<4; i++) { setTimeout(addTelemetryLine, i * 600); }
-            // Run loop cycle every 5 seconds to represent real-time community updates
-            setInterval(addTelemetryLine, 5000);
-
-            // 2. Animated Counter System for Baseline Statistics
-            function animateCounter(id, target, speed) {
-                let current = 0;
-                const element = document.getElementById(id);
-                const step = Math.ceil(target / (speed / 16));
-                const timer = setInterval(() => {
-                    current += step;
-                    if (current >= target) {
-                        element.textContent = target.toLocaleString();
-                        clearInterval(timer);
-                    } else {
-                        element.textContent = current.toLocaleString();
-                    }
-                }, 16);
-            }
-
-            animateCounter("count-fatalities", 2567, 1200);
-            animateCounter("count-pedestrians", 934, 1200);
-
-            // 3. Dynamic Corridor Warnings
-            const risks = ["DRIVE CAREFULLY", "WATCH FOR PEDESTRIANS", "SLOW DOWN", "EXPECT DELAYS"];
-            setInterval(() => {
-                document.getElementById("risk-index").textContent = risks[Math.floor(Math.random() * risks.length)];
-                document.getElementById("risk-corridor").textContent = paths[Math.floor(Math.random() * paths.length)];
-            }, 6000);
-
-            // 4. System Live Clock Implementation
-            setInterval(() => {
-                const now = new Date();
-                document.getElementById("live-clock").textContent = now.toTimeString().split(' ')[0] + " CAT";
-            }, 1000);
-        });
-    </script>
 </body>
 </html>
