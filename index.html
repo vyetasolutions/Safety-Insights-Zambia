@@ -3,21 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Safety Insights Zambia | Smarter Roads, Safer Journeys</title>
-    <meta name="description" content="Empowering Zambian road users with data-driven safety infrastructure, transparent enforcement, and rapid crisis response.">
+    <title>Safety Insights Zambia | Advocating for Safer Roads & Public Transit</title>
+    <meta name="description" content="Advocating for systemic road safety reforms, passenger rights, and safer public transit across Zambia.">
     
-    <!-- Minimal Inline CSS -->
     <style>
         :root {
             --bg-color: #020306;
             --surface-color: rgba(255, 255, 255, 0.02);
-            --surface-hover: rgba(255, 255, 255, 0.07);
+            --surface-hover: rgba(255, 255, 255, 0.05);
             --text-primary: #ffffff;
             --text-secondary: #8e8e93;
             --accent-blue: #2b5cff;
             --accent-orange: #ff6b35;
-            --accent-green: #30d158;
-            --border-color: rgba(255, 255, 255, 0.06);
+            --border-color: rgba(255, 255, 255, 0.08);
             --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
 
@@ -36,7 +34,6 @@
             background-color: var(--bg-color);
             color: var(--text-primary);
             line-height: 1.6;
-            overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
 
@@ -60,16 +57,15 @@
 
         section {
             padding: 80px 0;
-            position: relative;
         }
 
         .section-header {
-            max-width: 700px;
-            margin-bottom: 40px;
+            max-width: 760px;
+            margin-bottom: 48px;
         }
 
         .section-header h2 {
-            font-size: clamp(2.2rem, 5vw, 3.2rem);
+            font-size: clamp(2.2rem, 5vw, 3rem);
             margin-bottom: 16px;
             color: #fff;
         }
@@ -138,24 +134,20 @@
 
         /* HERO */
         .hero {
-            min-height: 70vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding-top: 100px;
-            padding-bottom: 60px;
+            padding-top: 140px;
+            padding-bottom: 80px;
         }
 
         .hero h1 {
-            font-size: clamp(2.8rem, 7vw, 4.8rem);
+            font-size: clamp(2.8rem, 6.5vw, 4.5rem);
             margin-bottom: 24px;
             color: #fff;
         }
 
         .hero p {
-            font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+            font-size: clamp(1.1rem, 2.2vw, 1.3rem);
             margin-bottom: 32px;
-            max-width: 720px;
+            max-width: 780px;
         }
 
         .btn-group {
@@ -173,11 +165,6 @@
             font-size: 1rem;
             cursor: pointer;
             border: none;
-            transition: opacity 0.2s ease;
-        }
-
-        .btn:hover {
-            opacity: 0.9;
         }
 
         .btn-primary {
@@ -199,47 +186,53 @@
         }
 
         @media (min-width: 768px) {
+            .grid-2 { grid-template-columns: repeat(2, 1fr); }
             .grid-3 { grid-template-columns: repeat(3, 1fr); }
+            .grid-4 { grid-template-columns: repeat(4, 1fr); }
         }
 
         .card {
             background: var(--surface-color);
             border: 1px solid var(--border-color);
             border-radius: 20px;
-            padding: 36px 30px;
+            padding: 32px;
         }
 
         .card h3 {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             margin-bottom: 12px;
         }
 
-        .step-num {
-            font-size: 2rem;
-            font-weight: 700;
-            color: rgba(255,255,255,0.1);
-            margin-bottom: 8px;
-        }
-
-        /* PROTOCOL BOX */
-        .protocol-box {
+        /* POLICY CALLOUT BOX */
+        .policy-box {
             border: 1px solid var(--border-color);
             border-radius: 24px;
             padding: 40px;
+            background: rgba(43, 92, 255, 0.02);
         }
 
-        .step-list {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 24px;
-            margin-top: 32px;
+        /* RIGHTS LIST */
+        .rights-list {
+            list-style: none;
+            margin-top: 16px;
         }
 
-        @media (min-width: 992px) {
-            .step-list { grid-template-columns: repeat(3, 1fr); }
+        .rights-list li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+            color: var(--text-secondary);
         }
 
-        /* REPORTING INTERFACE */
+        .rights-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-orange);
+            font-weight: bold;
+        }
+
+        /* ADVOCACY FORM LAYOUT */
         .interface-layout {
             display: grid;
             grid-template-columns: 1fr;
@@ -298,13 +291,6 @@
             font-size: 1rem;
         }
 
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: rgba(255,255,255,0.3);
-        }
-
         /* FOOTER */
         footer {
             border-top: 1px solid var(--border-color);
@@ -340,9 +326,10 @@
         <div class="container nav-container">
             <a href="#" class="logo">Safety Insights<span>.ZM</span></a>
             <div class="nav-links">
-                <a href="#ecosystem">Protections</a>
-                <a href="#golden-hour">Protocol</a>
-                <a href="#report">Report Hub</a>
+                <a href="#pillars">Key Pillars</a>
+                <a href="#passenger-rights">Transit Rights</a>
+                <a href="#policy-demands">Policy Reforms</a>
+                <a href="#report">Report & Advocate</a>
             </div>
         </div>
     </nav>
@@ -350,125 +337,158 @@
     <!-- Hero Section -->
     <header class="hero">
         <div class="container">
-            <span class="badge badge-orange">Zambia Road User Network</span>
-            <h1>Smarter Roads.<br>Safer Citizens.</h1>
-            <p>Bridging national safety planning with everyday street-level protection to give drivers, passengers, and pedestrians reliable infrastructure insights.</p>
+            <span class="badge badge-orange">Zambian Road Safety Advocacy</span>
+            <h1>Safe Transit is a Basic Right.<br>Not an Option.</h1>
+            <p>Every day, millions of Zambian commuters, pedestrians, and motorists face preventable hazards on our roads. We campaign for systemic enforcement reforms, infrastructure protection, and accountable public transport operators across Zambia.</p>
             <div class="btn-group">
-                <a href="#ecosystem" class="btn btn-primary">Explore Protections</a>
-                <a href="#report" class="btn btn-secondary">Report Hazard</a>
+                <a href="#policy-demands" class="btn btn-primary">Read Policy Demands</a>
+                <a href="#report" class="btn btn-secondary">Report Transit Violation</a>
             </div>
         </div>
     </header>
 
-    <!-- Safety Ecosystem -->
-    <section id="ecosystem">
+    <!-- Core Advocacy Pillars Section -->
+    <section id="pillars">
         <div class="container">
             <div class="section-header">
-                <span class="badge">Everyday Protections</span>
-                <h2>How We Protect You</h2>
-                <p>Practical, localized safety infrastructure designed around community patterns[cite: 1].</p>
+                <span class="badge">Our Mission</span>
+                <h2>Pillars of Road & Public Transit Reform</h2>
+                <p>Pushing for direct legislative oversight, commuter safety protections, and safer road designs.</p>
             </div>
 
             <div class="grid grid-3">
                 <article class="card">
-                    <div class="step-num">01</div>
-                    <h3>Safe Crossings Network</h3>
-                    <p>Building high-visibility raised crosswalks and speed bumps across pedestrian junctions near school zones and open-air markets[cite: 1].</p>
+                    <h3 style="color: var(--accent-orange);">1. Public Transit Standards</h3>
+                    <p>Advocating for mandatory speed governors, strict bus overloading prohibitions, and enforced rest cycles for long-distance drivers across primary inter-city corridors.</p>
                 </article>
 
                 <article class="card">
-                    <div class="step-num">02</div>
-                    <h3>Anti-Corruption Body Cams</h3>
-                    <p>Partnering with authorities to equip check units with continuous body cameras to eliminate delays and ensure transparent logs[cite: 1].</p>
+                    <h3 style="color: var(--accent-blue);">2. Safe Pedestrian Infrastructure</h3>
+                    <p>Demanding raised pedestrian crosswalks, protected walkways, and continuous fencing around school zones and high-density market centers like Lusaka's Great East Road.</p>
                 </article>
 
                 <article class="card">
-                    <div class="step-num">03</div>
-                    <h3>Highway Isolation Fencing</h3>
-                    <p>Installing structural divider fences along major routes to prevent unexpected pedestrian crossings and establish safe corridors[cite: 1].</p>
+                    <h3>3. Transparent Enforcement</h3>
+                    <p>Campaigning for digital speed monitoring networks and anti-corruption body-worn cameras for traffic enforcement units to eliminate arbitrary stops and ensure real driver accountability[cite: 1].</p>
                 </article>
             </div>
         </div>
     </section>
 
-    <!-- Survival Protocols Section -->
-    <section id="golden-hour">
+    <!-- Commuter & Passenger Rights Section -->
+    <section id="passenger-rights" style="background: rgba(255,255,255,0.01);">
         <div class="container">
-            <div class="protocol-box">
-                <div style="max-width: 650px;">
-                    <span class="badge" style="background: rgba(43, 92, 255, 0.1); color: var(--accent-blue); border-color: rgba(43, 92, 255, 0.2);">The Golden Hour Threshold</span>
-                    <h2>Critical Post-Crash Survival Protocol</h2>
-                    <p style="margin-top: 12px;">Immediate care within the first hour preserves lives while emergency units are in transit[cite: 1].</p>
+            <div class="section-header">
+                <span class="badge">Commuter Protection</span>
+                <h2>Know Your Rights as a Passenger</h2>
+                <p>Public transport users hold the power to demand basic safety standards inside minibuses, inter-city coaches, and taxis.</p>
+            </div>
+
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3>Your Rights On Board</h3>
+                    <ul class="rights-list">
+                        <li>The right to travel without vehicle overloading or improper seating arrangements.</li>
+                        <li>The right to demand the driver adhere to legal speed limits.</li>
+                        <li>The right to clean, operational seatbelts in long-distance inter-city buses.</li>
+                        <li>The right to speak out or request a safe stop if a driver shows signs of intoxication or fatigue.</li>
+                    </ul>
                 </div>
 
-                <div class="step-list">
-                    <div class="card">
-                        <div class="step-num" style="color: var(--accent-orange);">01</div>
-                        <h3 style="margin-bottom: 8px;">Secure Perimeter</h3>
-                        <p style="font-size: 0.95rem;">Park safely and turn on hazard lights immediately to warn oncoming traffic[cite: 1].</p>
+                <div class="card">
+                    <h3>Operator Accountability</h3>
+                    <ul class="rights-list">
+                        <li>Public service vehicles (PSVs) must display valid RTSA fitness and registration credentials clearly.</li>
+                        <li>Commercial drivers must hold valid, unexpired PSV license endorsements.</li>
+                        <li>Operators must honor posted passenger fare rates without intimidation.</li>
+                        <li>Buses must not drop passengers at undesignated, dangerous roadside locations along major corridors[cite: 1].</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Policy Demands Section -->
+    <section id="policy-demands">
+        <div class="container">
+            <div class="policy-box">
+                <div style="max-width: 700px;">
+                    <span class="badge" style="background: rgba(43, 92, 255, 0.1); color: var(--accent-blue); border-color: rgba(43, 92, 255, 0.2);">Legislative Action Plan</span>
+                    <h2>Key Policy Reform Priorities</h2>
+                    <p style="margin-top: 12px; margin-bottom: 24px;">We present these core policy initiatives to regulators, public transport unions, and transport authorities to drastically reduce highway fatalities in Zambia[cite: 1]:</p>
+                </div>
+
+                <div class="grid grid-3">
+                    <div class="card" style="background: rgba(0,0,0,0.4);">
+                        <h4 style="margin-bottom: 8px;">1. Automated Speed Networks</h4>
+                        <p style="font-size: 0.95rem;">Deploy permanent, automated speed cameras along high-fatality stretches like the Lusaka-Ndola highway corridor[cite: 1].</p>
                     </div>
-                    <div class="card">
-                        <div class="step-num" style="color: var(--accent-orange);">02</div>
-                        <h3 style="margin-bottom: 8px;">Trigger Dispatch</h3>
-                        <p style="font-size: 0.95rem;">Call emergency medical links. Relay your highway corridor and total injured count[cite: 1].</p>
+                    <div class="card" style="background: rgba(0,0,0,0.4);">
+                        <h4 style="margin-bottom: 8px;">2. Mandatory Driver Fatigue Controls</h4>
+                        <p style="font-size: 0.95rem;">Enforce mandatory electronic logbooks for commercial inter-city bus operators to eliminate long, continuous shifts.</p>
                     </div>
-                    <div class="card">
-                        <div class="step-num" style="color: var(--accent-orange);">03</div>
-                        <h3 style="margin-bottom: 8px;">Control Bleeding</h3>
-                        <p style="font-size: 0.95rem;">Apply direct physical pressure to open wounds using clean cloths until help arrives[cite: 1].</p>
+                    <div class="card" style="background: rgba(0,0,0,0.4);">
+                        <h4 style="margin-bottom: 8px;">3. Universal Crash Survival Training</h4>
+                        <p style="font-size: 0.95rem;">Require basic first-responder survival protocols and post-crash triage training as part of all commercial PSV licensing[cite: 1].</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Hazard Submissions & Hotline Interface -->
+    <!-- Report Violations & Public Action Desk -->
     <section id="report">
         <div class="container">
             <div class="interface-layout">
                 <div>
-                    <span class="badge">Community Response Hub</span>
-                    <h2>Report a Hazard</h2>
-                    <p style="margin-bottom: 24px;">Submit road defects, unlit construction zones, or safety concerns directly to our technical desk[cite: 1].</p>
+                    <span class="badge">Public Action Hub</span>
+                    <h2>Report Transit Hazards & Violations</h2>
+                    <p style="margin-bottom: 24px;">Expose dangerous driving, defective public service vehicles, or unlit road hazards. We aggregate citizen data to push regulatory bodies for direct action[cite: 1].</p>
                     
                     <div class="hotline-card">
-                        <h4>General Safety Support Desk</h4>
+                        <h4>Advocacy Response Desk</h4>
                         <div class="hotline-number">+260 211372711</div>
-                        <p style="font-size: 0.9rem;">Monitoring highway infrastructure integrity across primary corridors[cite: 1].</p>
+                        <p style="font-size: 0.9rem;">Aggregating public reporting on transport safety violations across Zambia[cite: 1].</p>
                     </div>
 
                     <p style="font-size: 0.9rem;">
-                        <strong>Office Location:</strong><br>
+                        <strong>Head Office:</strong><br>
                         Safety Insights Zambia Limited<br>
                         Plot 95/60 Los Angeles Road, Makeni, Lusaka, Zambia[cite: 1]
                     </p>
                 </div>
 
                 <div class="form-container">
-                    <form onsubmit="event.preventDefault(); alert('Road hazard successfully logged.'); this.reset();">
+                    <form onsubmit="event.preventDefault(); alert('Report successfully received for advocacy indexing.'); this.reset();">
                         <div class="form-group">
-                            <label>Your Name / Identity</label>
-                            <input type="text" placeholder="Optional info" name="citizen_name">
+                            <label>Your Name / Contact (Optional)</label>
+                            <input type="text" placeholder="Phone or email" name="citizen_contact">
                         </div>
                         <div class="form-group">
-                            <label>Contact Method</label>
-                            <input type="text" placeholder="Phone number or email" required name="citizen_contact">
-                        </div>
-                        <div class="form-group">
-                            <label>Highway Location / Zone</label>
-                            <select required name="hazard_location">
-                                <option value="" disabled selected>Select regional focus...</option>
-                                <option value="lusaka-ndola">Lusaka - Ndola Corridor</option>
-                                <option value="lusaka-urban">Lusaka Urban Center</option>
-                                <option value="copperbelt">Copperbelt Local Network</option>
-                                <option value="other">Other Transit Line</option>
+                            <label>Violation / Incident Type</label>
+                            <select required name="hazard_type">
+                                <option value="" disabled selected>Select category...</option>
+                                <option value="overloading">Public Transport Overloading / Reckless Driving</option>
+                                <option value="unlicensed">Defective Vehicle / Unfit PSV Bus</option>
+                                <option value="infrastructure">Dangerous Road / Unmarked Pedestrian Zone</option>
+                                <option value="extortion">Enforcement Misconduct / Extortion</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label>Description of Hazard</label>
-                            <textarea placeholder="Describe what you encountered..." required name="hazard_details"></textarea>
+                            <label>Route / Location</label>
+                            <select required name="hazard_location">
+                                <option value="" disabled selected>Select primary route...</option>
+                                <option value="lusaka-ndola">Lusaka - Ndola Highway</option>
+                                <option value="lusaka-urban">Lusaka Local Minibus Routes</option>
+                                <option value="copperbelt">Copperbelt Transit Network</option>
+                                <option value="other">Other Transit Corridor</option>
+                            </select>
                         </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%; font-weight: 600;">Log Hazard</button>
+                        <div class="form-group">
+                            <label>Details of Incident or Proposal</label>
+                            <textarea placeholder="Provide bus registration numbers, specific location, or details..." required name="hazard_details"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; font-weight: 600;">Submit for Advocacy Log</button>
                     </form>
                 </div>
             </div>
@@ -478,7 +498,7 @@
     <!-- Footer -->
     <footer>
         <div class="container footer-wrap">
-            <p>&copy; 2026 Safety Insights Zambia Limited[cite: 1].</p>
+            <p>&copy; 2026 Safety Insights Zambia Limited. Advocating for safer roads for all[cite: 1].</p>
             <div class="meta-links">
                 <a href="mailto:yahatigreen@gmail.com">yahatigreen@gmail.com[cite: 1]</a>
             </div>
