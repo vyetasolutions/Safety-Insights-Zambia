@@ -70,8 +70,28 @@
             z-index: 1000;
         }
 
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
         .logo img {
-            height: 60px;
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--navy-blue);
+            line-height: 1.1;
+        }
+
+        .logo-text span {
+            color: var(--bright-orange);
         }
 
         nav ul {
@@ -346,6 +366,12 @@
             margin-top: 5px;
         }
 
+        .footer-logo {
+            height: 40px;
+            width: auto;
+            margin-bottom: 15px;
+        }
+
         .footer-col p, .footer-col li {
             color: #a0aec0;
             font-size: 0.9rem;
@@ -399,9 +425,11 @@
 
     <!-- Main Navigation Header -->
     <header>
-        <div class="logo">
-            <strong style="font-size: 1.4rem; color: var(--navy-blue);">SAFETY INSIGHTS <span style="color:var(--bright-orange)">ZAMBIA</span></strong>
-        </div>
+        <a href="#" class="logo">
+            <!-- SVG placeholder icon for logo; replace src with your 'logo.png' -->
+            <img src="logo.png" alt="Safety Insights Zambia Logo" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><polygon points=\'50,10 90,30 90,70 50,90 10,70 10,30\' fill=\'%230b1f3a\'/><path d=\'M35,50 L45,60 L65,40\' stroke=\'%23f26522\' stroke-width=\'8\' fill=\'none\'/></svg>';">
+            <div class="logo-text">SAFETY INSIGHTS <span>ZAMBIA</span></div>
+        </a>
         <nav>
             <ul>
                 <li><a href="#" class="active">Home</a></li>
@@ -549,6 +577,7 @@
     <footer>
         <div class="footer-grid">
             <div class="footer-col">
+                <img src="logo.png" alt="Safety Insights Zambia Logo" class="footer-logo" onerror="this.onerror=null; this.style.display='none';">
                 <h4>Company Information</h4>
                 <p>Registration No.: 1202300011/1</p>
                 <p>Tax Payer ID: 1000598331</p>
