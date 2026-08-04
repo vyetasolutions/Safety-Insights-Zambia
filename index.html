@@ -143,6 +143,7 @@
             flex-direction: column;
             justify-content: center;
             padding-top: 100px;
+            padding-bottom: 60px;
         }
 
         .hero h1 {
@@ -189,55 +190,6 @@
             color: #ffffff;
             border: 1px solid var(--border-color);
         }
-
-        /* STATIC INFO BOARD (SIMULATIONS REMOVED) */
-        .dashboard-container {
-            background: rgba(4, 6, 12, 0.7);
-            border: 1px solid var(--border-color);
-            border-radius: 24px;
-            padding: 32px;
-        }
-
-        .dash-header {
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 16px;
-            margin-bottom: 24px;
-        }
-
-        .dash-metrics {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 24px;
-        }
-
-        @media (min-width: 768px) {
-            .dash-metrics { grid-template-columns: repeat(3, 1fr); }
-        }
-
-        .metric-block {
-            background: rgba(255, 255, 255, 0.01);
-            border: 1px solid rgba(255,255,255,0.03);
-            padding: 24px;
-            border-radius: 16px;
-        }
-
-        .metric-block label {
-            display: block;
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 8px;
-        }
-
-        .metric-number {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: var(--text-primary);
-        }
-
-        .metric-number.orange { color: var(--accent-orange); }
-        .metric-number.blue { color: var(--accent-blue); }
 
         /* CARDS & GRID */
         .grid {
@@ -388,7 +340,6 @@
         <div class="container nav-container">
             <a href="#" class="logo">Safety Insights<span>.ZM</span></a>
             <div class="nav-links">
-                <a href="#overview">Overview</a>
                 <a href="#ecosystem">Protections</a>
                 <a href="#golden-hour">Protocol</a>
                 <a href="#report">Report Hub</a>
@@ -408,36 +359,6 @@
             </div>
         </div>
     </header>
-
-    <!-- Static Noticeboard (Bloat & Simulations Removed) -->
-    <section id="overview" style="padding-top: 0;">
-        <div class="container">
-            <div class="dashboard-container">
-                <div class="dash-header">
-                    <h3 style="font-size: 1.15rem; margin-bottom: 4px;">Road Safety Focus Areas</h3>
-                    <p style="font-size: 0.85rem;">Core statistics guiding our infrastructure deployment across Zambia[cite: 1].</p>
-                </div>
-
-                <div class="dash-metrics">
-                    <div class="metric-block">
-                        <label>Primary Focus</label>
-                        <div class="metric-number orange">Highway Safety</div>
-                        <p style="font-size: 0.8rem; margin-top: 4px;">Building safer walkways and tracks.</p>
-                    </div>
-                    <div class="metric-block">
-                        <label>Vulnerable Zones</label>
-                        <div class="metric-number">Schools & Markets</div>
-                        <p style="font-size: 0.8rem; margin-top: 4px;">Protecting pedestrians in high-density areas.</p>
-                    </div>
-                    <div class="metric-block">
-                        <label>Advisory Status</label>
-                        <div class="metric-number blue">SLOW DOWN</div>
-                        <p style="font-size: 0.8rem; margin-top: 4px;">T3 Highway Corridor & Major Routes</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Safety Ecosystem -->
     <section id="ecosystem">
