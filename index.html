@@ -82,7 +82,7 @@
         }
 
         .logo img {
-            height: 70px; /* Increased slightly to show text clearly */
+            height: 70px;
             width: auto;
             object-fit: contain;
         }
@@ -418,7 +418,7 @@
             height: 70px;
             width: auto;
             margin-bottom: 15px;
-            background-color: var(--white); /* Added white bg to pop against dark footer */
+            background-color: var(--white);
             padding: 5px;
             border-radius: 4px;
         }
@@ -513,7 +513,6 @@
     <!-- Main Navigation Header -->
     <header>
         <a href="#home" class="logo">
-            <!-- Referencing the provided file verbatim -->
             <img src="PHOTO-2026-08-04-19-21-45.jpg" alt="Safety Insights Zambia Limited Logo">
         </a>
         
@@ -523,8 +522,10 @@
             <ul id="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About Us</a></li>
+                <li><a href="#objectives">Objectives</a></li> <!-- New Link -->
                 <li><a href="#services">Services</a></li>
                 <li><a href="#pmu">PMU Structure</a></li>
+                <li><a href="#resources">Report</a></li> <!-- New Link -->
                 <li><a href="#contact">Contact Us</a></li>
             </ul>
         </nav>
@@ -569,28 +570,55 @@
         </div>
     </section>
 
+    <!-- NEW: Project Objectives Section -->
+    <section id="objectives" class="section-padding" style="background-color: var(--light-bg);">
+        <div class="section-title">
+            <h2>Project Objectives</h2>
+        </div>
+        <div class="about-content">
+            <p>Our goal is to make the roads safe for everyone. We plan to do this by focusing on three main areas.</p>
+        </div>
+        <div class="services-grid" style="margin-top: 40px;">
+            <div class="service-card">
+                <i class="fa-solid fa-bullseye"></i>
+                <h3>Stop Accidents</h3>
+                <p>We want to lower the number of crashes on the road by teaching people to drive better.</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-chalkboard-user"></i>
+                <h3>Better Training</h3>
+                <p>We will give the best training to drivers and traffic officers so they know the rules.</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-scale-balanced"></i>
+                <h3>Fair Practices</h3>
+                <p>We will use strong rules and tools to make sure everyone is treated fairly on the road.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Services Section -->
-    <section id="services" class="section-padding" style="background-color: var(--light-bg);">
+    <section id="services" class="section-padding" style="background-color: var(--white);">
         <div class="section-title">
             <h2>Our Core Services</h2>
         </div>
         <div class="services-grid">
-            <div class="service-card">
+            <div class="service-card" style="background: var(--light-bg);">
                 <i class="fa-solid fa-shield-halved"></i>
                 <h3>Road Safety</h3>
                 <p>We design and implement comprehensive road safety programs that actively reduce risks and save lives.</p>
             </div>
-            <div class="service-card">
+            <div class="service-card" style="background: var(--light-bg);">
                 <i class="fa-solid fa-chart-line"></i>
                 <h3>Training Solutions</h3>
                 <p>Professional, certified training solutions built to increase capacity and promote a nationwide culture of safety.</p>
             </div>
-            <div class="service-card">
+            <div class="service-card" style="background: var(--light-bg);">
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <h3>Research & Audits</h3>
                 <p>We use active mystery shoppers, M&E data, and evidence-based analysis to inform public policy.</p>
             </div>
-            <div class="service-card">
+            <div class="service-card" style="background: var(--light-bg);">
                 <i class="fa-solid fa-headset"></i>
                 <h3>PMU Consultancy</h3>
                 <p>Expert administrative advice and management structures supporting statutory government initiatives.</p>
@@ -599,7 +627,7 @@
     </section>
 
     <!-- Program Management Unit (PMU) Section -->
-    <section id="pmu" class="section-padding" style="background-color: var(--white);">
+    <section id="pmu" class="section-padding" style="background-color: var(--light-bg);">
         <div class="section-title">
             <h2>Program Management Unit (PMU)</h2>
         </div>
@@ -659,8 +687,27 @@
         </div>
     </section>
 
+    <!-- NEW: Reports & Resources Section (PDF Embed) -->
+    <section id="resources" class="section-padding" style="background-color: var(--white);">
+        <div class="section-title">
+            <h2>Annual Status Report</h2>
+        </div>
+        <div class="about-content" style="margin-bottom: 30px;">
+            <p>Read the full road safety report right here on our website.</p>
+        </div>
+        <div style="max-width: 900px; margin: 0 auto; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+            <iframe 
+                src="https://www.rtsa.org.zm/wp-content/uploads/2021/09/RTSA-2020-Annual-Road-Transport-and-Safety-Status-Report-v3-23.03.2021-Printed-1.pdf" 
+                width="100%" 
+                height="800px" 
+                style="border: none;" 
+                title="RTSA 2020 Annual Road Transport and Safety Status Report">
+            </iframe>
+        </div>
+    </section>
+
     <!-- Contact & Map Section -->
-    <section id="contact" class="section-padding" style="background-color: var(--white);">
+    <section id="contact" class="section-padding" style="background-color: var(--light-bg);">
         <div class="section-title">
             <h2>Contact & Location</h2>
         </div>
@@ -696,7 +743,6 @@
     <footer>
         <div class="footer-grid">
             <div class="footer-col">
-                <!-- Referencing the provided file verbatim in footer as well -->
                 <img src="PHOTO-2026-08-04-19-21-45_2.jpg" alt="Safety Insights Zambia Limited Logo" class="footer-logo">
                 <h4>Company Information</h4>
                 <p>Registration No.: 1202300011/1</p>
@@ -709,6 +755,7 @@
                 <h4>Quick Links</h4>
                 <ul>
                     <li><a href="#about">About Safety Insights</a></li>
+                    <li><a href="#objectives">Project Objectives</a></li>
                     <li><a href="#services">Core Services</a></li>
                     <li><a href="#pmu">PMU Organogram</a></li>
                     <li><a href="#contact">Contact Us</a></li>
